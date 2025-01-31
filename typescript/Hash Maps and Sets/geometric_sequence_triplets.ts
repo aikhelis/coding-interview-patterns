@@ -10,11 +10,8 @@ function geometric_sequence_triplets(nums: number[], r: number): number {
         // Decrement the frequency of x in right_map since x is now being
         // processed and is no longer to the right.
         right_map[x] -= 1;
-        if (x % r === 0) {
-            const left_value = x / r;
-            const right_value = x * r;
-            count += (left_map[left_value] ?? 0) * (right_map[right_value] ?? 0);
-        }
+        if (x % r === 0)
+            count += (left_map[x / r] ?? 0) * (right_map[x * r] ?? 0);
         // Increment the frequency of x in left_map since it'll be a part of the
         // left side of the array once we iterate to the next value of x.
         left_map[x] = (left_map[x] ?? 0) + 1;
