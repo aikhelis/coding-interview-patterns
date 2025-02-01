@@ -1,9 +1,9 @@
-function pair_sum_unsorted(nums: number[], target: number): number[] {
-    const hashmap = {}
+function pairSumUnsorted(nums: number[], target: number): number[] {
+    const hashMap: { [key: number]: number } = {};
     for (let i = 0; i < nums.length; i++) {
-        if (hashmap[target - nums[i]] !== undefined)
-            return [hashmap[target - nums[i]], i]
-        hashmap[nums[i]] = i
+        if (hashMap[target - nums[i]] !== undefined)
+            return [hashMap[target - nums[i]], i];
+        hashMap[nums[i]] = i;
     }
-    return []
+    return [];
 }

@@ -1,20 +1,20 @@
-function zero_striping(matrix: number[][]): void {
+function zeroStriping(matrix: number[][]): void {
     if (!matrix || !matrix[0])
         return;
     const m = matrix.length, n = matrix[0].length;
     // Check if the first row initially contains a zero.
-    let first_row_has_zero = false;
+    let firstRowHasZero = false;
     for (let c = 0; c < n; c++) {
         if (matrix[0][c] === 0) {
-            first_row_has_zero = true;
+            firstRowHasZero = true;
             break;
         }
     }
     // Check if the first column initially contains a zero.
-    let first_col_has_zero = false;
+    let firstColHasZero = false;
     for (let r = 0; r < m; r++) {
         if (matrix[r][0] === 0) {
-            first_col_has_zero = true;
+            firstColHasZero = true;
             break;
         }
     }
@@ -40,14 +40,14 @@ function zero_striping(matrix: number[][]): void {
     }
     // If the first row had a zero initially, set all elements in the
     // first row to zero.
-    if (first_row_has_zero) {
+    if (firstRowHasZero) {
         for (let c = 0; c < n; c++) {
             matrix[0][c] = 0;
         }
     }
     // If the first column had a zero initially, set all elements in
     // the first column to zero.
-    if (first_col_has_zero) {
+    if (firstColHasZero) {
         for (let r = 0; r < m; r++) {
             matrix[r][0] = 0;
         }
